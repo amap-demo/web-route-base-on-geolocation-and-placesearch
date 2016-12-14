@@ -2,7 +2,7 @@
 一个基于高德地图JSAPI开发的移动端示例，模拟了如下场景：通过定位获取用户当前位置，定位成功后可以进行位置微调，定位失败的话可以通过搜索让用户选择当前位置；然后通过搜索让用户选择目的地，在当前位置和目的地都取得之后，进行从当前位置到目的地的路线规划。
 
 ##体验地址
-
+<img src='http://a.amap.com/jsapi_demos/static/JSAPI-route-base-on-geolocation-and-placesearch/loc.png' stype='width:200px;height:200px'/>
 ##预览图
 
 ##场景实现思路:
