@@ -21,6 +21,7 @@
 ```html
 <script type="text/javascript" src='http://webapi.amap.com/maps?v=1.3&plugin=AMap.Geolocation,AMap.ToolBar,AMap.Geocoder,AMap.PlaceSearch,AMap.Autocomplete,AMap.Driving&key=e07ffdf58c8e8672037bef0d6cae7d4a'></script>
 ```
+
 ###2.页面布局
 首先通过html和css实现一个左右布局的单页面，左右各一个界面，左侧界面用于展示地图、定位结果调整、起点终点显示和路线规划结果展示，右侧页面用于实现地点选择功能，包括输入提示框和POI搜索结果展示面板。代码中showLeftView和showRightView用来实现左右两个界面的切换。
 ###3.定位功能的实现
@@ -73,6 +74,7 @@ var onLocateSuccess = function(result) {
  	autoComplete.setCity(result.addressComponent.citycode);
 };
 ```
+
 ###4.拖拽地图调整起点位置的实现
 首先创建一个自定义的控件，JSAPI的自定义控件只需要实现addTo和removeFrom两个方法即可。这个自定义控件的功能很简单，就是在地图中心显示一个和起点标记完全一样的图片。
 
@@ -94,6 +96,7 @@ var customControl = { //自定义控件，需要实现addTo和removeFrom两个�
  	}
 }
 ```
+
 然后在需要调整时給地图绑定dragstart和moveend事件，dragstart的事件回调中隐藏起点Marker、添加自定义控件，moveend的事件回调用移除自定义空间，设置起点marker的位置，并进行逆地理编码获取新位置的地址信息：
 
 ```javascript
