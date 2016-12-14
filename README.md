@@ -231,43 +231,35 @@ var enableSearch = function() {
 ```
 
 ###6.驾车路线规划的实现
- +驾车路线规划需要使用Driving组件，因为已经自己创建了起终点的标记Marker，所以我们设置了hideMarkers隐藏组件自己的起终点标记，传入了map属性之后，路线规划的结果将自动显示在地图对象上。然后在onOriginSelected和onDestinationSelected函数中先判断是否起终点的位置都有了，都有了之后调用driving的search方法就可以了：
+ 驾车路线规划需要使用Driving组件，因为已经自己创建了起终点的标记Marker，所以我们设置了hideMarkers隐藏组件自己的起终点标记，传入了map属性之后，路线规划的结果将自动显示在地图对象上。然后在onOriginSelected和onDestinationSelected函数中先判断是否起终点的位置都有了，都有了之后调用driving的search方法就可以了：
 
 ```javascript
- + 	//创建驾车路线规划组件
- +    var driving = new AMap.Driving({
- +        map:map,
- +        hideMarkers:true
- +    });
- +
- +    if (origin.position && destination.position) {
- +		driving.search(origin.position, destination.position)
- +	}
+  	//创建驾车路线规划组件
+     var driving = new AMap.Driving({
+         map:map,
+         hideMarkers:true
+     });
+ 
+     if (origin.position && destination.position) {
+ 		driving.search(origin.position, destination.position)
+ 	}
 ```
 
- +##其他说明
- +
- +####关于JSAPI的开发者key：
- +   开发者key是开发者在使用JSAPI开发地图应用时必须填写的一串字符，只有使用了正确有效的key才能保证所有的功能和服务接口正常工作。本示例没有填写有效的开发者key，为使涉及到服务的相关示例能够正常运行，首先需要注册高德地图开发者账号，然后申请JSAPI的开发者key,并替换index.html中的‘您申请的key值’为申请的key。
- +
- +####JSAPI开发者key的申请地址：
- +[http://lbs.amap.com/](http://lbs.amap.com),点击打开左侧链接之后，在页面右上角注册开发者账号后即可申请key。
- +
- +####相关参考网站：
- +
- +- [JSAPI 简介](http://lbs.amap.com/api/javascript-api/summary/) 
- +
- +- [JSAPI 开发指南](http://lbs.amap.com/api/javascript-api/guide/create-map/show-map/)
- +
- +- [JSAPI 参考手册](http://lbs.amap.com/api/javascript-api/reference/core/)
- +
- +- [JSAPI 示例中心](http://lbs.amap.com/api/javascript-api/example/map/map-show/)
- +
- +
- +
- +
- +
- +
- +
-BIN  images/blue1.jpg
+ ##其他说明
+ 
+ ####关于JSAPI的开发者key：
+    开发者key是开发者在使用JSAPI开发地图应用时必须填写的一串字符，只有使用了正确有效的key才能保证所有的功能和服务接口正常工作。本示例没有填写有效的开发者key，为使涉及到服务的相关示例能够正常运行，首先需要注册高德地图开发者账号，然后申请JSAPI的开发者key,并替换index.html中的‘您申请的key值’为申请的key。
+ 
+ ####JSAPI开发者key的申请地址：
+ [http://lbs.amap.com/](http://lbs.amap.com),点击打开左侧链接之后，在页面右上角注册开发者账号后即可申请key。
+ 
+ ####相关参考网站：
+ 
+ - [JSAPI 简介](http://lbs.amap.com/api/javascript-api/summary/) 
+ 
+ - [JSAPI 开发指南](http://lbs.amap.com/api/javascript-api/guide/create-map/show-map/)
+ 
+ - [JSAPI 参考手册](http://lbs.amap.com/api/javascript-api/reference/core/)
+ 
+ - [JSAPI 示例中心](http://lbs.amap.com/api/javascript-api/example/map/map-show/)
 
