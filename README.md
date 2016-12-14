@@ -221,4 +221,10 @@ var enableSearch = function() {
 	//点击终点输入的时候,打开搜索界面
 	AMap.event.addDomListener(destination, 'click', function() {
 		stopAdjustOrigin();
-		if (destination.innerHTML !== '你
+		if (destination.innerHTML !== '你要去哪儿') {
+			//如果已经有目的地，搜索页面打开默认显示目的地的周边搜索结果
+			placeSearch.searchNearBy('', destination.position);
+		}
+		onInputClick(destination.innerHTML, onDestinationSelected)
+	});
+}
