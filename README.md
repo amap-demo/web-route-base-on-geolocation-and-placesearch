@@ -2,7 +2,7 @@
 一个基于高德地图JSAPI开发的移动端示例，模拟了如下场景：通过定位获取用户当前位置，定位成功后可以进行位置微调，定位失败的话可以通过搜索让用户选择当前位置；然后通过搜索让用户选择目的地，在当前位置和目的地都取得之后，进行从当前位置到目的地的路线规划。
 
 ##体验地址
-<img src='http://a.amap.com/jsapi_demos/static/JSAPI-route-base-on-geolocation-and-placesearch/loc.png' stype='width:200px;height:200px'/>
+<img src='http://a.amap.com/jsapi_demos/static/JSAPI-route-base-on-geolocation-and-placesearch/loc.png' width='200'/>
 ##预览图
 
 ##场景实现思路:
@@ -216,53 +216,4 @@ var enableSearch = function() {
 	//点击终点输入的时候,打开搜索界面
 	AMap.event.addDomListener(destination, 'click', function() {
 		stopAdjustOrigin();
-		if (destination.innerHTML !== '你要去哪儿') {
-			//如果已经有目的地，搜索页面打开默认显示目的地的周边搜索结果
-			placeSearch.searchNearBy('', destination.position);
-		}
-		onInputClick(destination.innerHTML, onDestinationSelected)
-	});
-}
-```
-
-###6.驾车路线规划的实现
-驾车路线规划需要使用Driving组件，因为已经自己创建了起终点的标记Marker，所以我们设置了hideMarkers隐藏组件自己的起终点标记，传入了map属性之后，路线规划的结果将自动显示在地图对象上。然后在onOriginSelected和onDestinationSelected函数中先判断是否起终点的位置都有了，都有了之后调用driving的search方法就可以了：
-
-```javascript
-//创建驾车路线规划组件
-var driving = new AMap.Driving({
-    map:map,
-    hideMarkers:true
-});
-
-if (origin.position && destination.position) {
-	driving.search(origin.position, destination.position)
-}
-```
-
-##其他说明
-
-####关于JSAPI的开发者key：
-   开发者key是开发者在使用JSAPI开发地图应用时必须填写的一串字符，只有使用了正确有效的key才能保证所有的功能和服务接口正常工作。本示例没有填写有效的开发者key，为使涉及到服务的相关示例能够正常运行，首先需要注册高德地图开发者账号，然后申请JSAPI的开发者key,并替换index.html中的‘您申请的key值’为申请的key。
-
-####JSAPI开发者key的申请地址：
-
-[http://lbs.amap.com/](http://lbs.amap.com),点击打开左侧链接之后，在页面右上角注册开发者账号后即可申请key。
-
-####相关参考网站：
-
-- [JSAPI 简介](http://lbs.amap.com/api/javascript-api/summary/) 
-
-- [JSAPI 开发指南](http://lbs.amap.com/api/javascript-api/guide/create-map/show-map/)
-
-- [JSAPI 参考手册](http://lbs.amap.com/api/javascript-api/reference/core/)
-
-- [JSAPI 示例中心](http://lbs.amap.com/api/javascript-api/example/map/map-show/)
-
-
-
-
-
-
-
-
+		if (destination.innerHTML !== '你
