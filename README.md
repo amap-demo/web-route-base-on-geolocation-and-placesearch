@@ -2,13 +2,12 @@
 一个基于高德地图JSAPI开发的移动端示例，模拟了如下场景：通过定位获取用户当前位置，定位成功后可以进行位置微调，定位失败的话可以通过搜索让用户选择当前位置；然后通过搜索让用户选择目的地，在当前位置和目的地都取得之后，进行从当前位置到目的地的路线规划。
 
 ##体验地址
-<img src='http://a.amap.com/jsapi_demos/static/JSAPI-route-base-on-geolocation-and-placesearch/loc.png' width='200'/>
+<img src='https://a.amap.com/jsapi_demos/static/JSAPI-route-base-on-geolocation-and-placesearch/loc.png' width='200'/>
 ##预览图
-
-<img src='http://a.amap.com/jsapi_demos/static/JSAPI-route-base-on-geolocation-and-placesearch/1.png' width='200'/>
-<img src='http://a.amap.com/jsapi_demos/static/JSAPI-route-base-on-geolocation-and-placesearch/3.png' width='200'/>
-<img src='http://a.amap.com/jsapi_demos/static/JSAPI-route-base-on-geolocation-and-placesearch/4.png' width='200'/>
-<img src='http://a.amap.com/jsapi_demos/static/JSAPI-route-base-on-geolocation-and-placesearch/5.png' width='200'/>
+<img src='https://a.amap.com/jsapi_demos/static/JSAPI-route-base-on-geolocation-and-placesearch/1.png' width='200'/>
+<img src='https://a.amap.com/jsapi_demos/static/JSAPI-route-base-on-geolocation-and-placesearch/3.png' width='200'/>
+<img src='https://a.amap.com/jsapi_demos/static/JSAPI-route-base-on-geolocation-and-placesearch/4.png' width='200'/>
+<img src='https://a.amap.com/jsapi_demos/static/JSAPI-route-base-on-geolocation-and-placesearch/5.png' width='200'/>
 
 ##场景实现思路:
   首先，通过Geoocation定位组件的getCurrentPosition接口获得用户当前的准确位置，如果定位成功则把获取到的精确位置标记为起点位置，如果定位失败则通过Geolocation的getCityInfo方法获取用户所在的城市信息后把城市中心点标记为起点位置；
